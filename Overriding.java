@@ -1,23 +1,22 @@
-//Overriding Method in Java
-package javaapplication2;
-
-class Overriding{
-
-    Overriding(){
-        
-    }
+class Parent{
     void display(){
-        System.out.println("Method: 1 Without Parameter");
+        System.out.println("Parent");
     }
-    void display(int a,double b){ //Here this a is local variable 
-        System.out.println("Method: 2 With Parameter a = " +a+ " b = "+b);
-    }
-    void display(double b,int a){
-        System.out.println("Method: 3 With Parameter, Just I changed the parameter order b = "+b+" a = "+a);
+    void print(){
+        System.out.println("Parent Print Method");
     }
 }
-public class demo{   
+class Child extends Parent{
+    @Override
+    void display(){
+        System.out.println("Child");
+    }
+}
+public class Demo{
     public static void main(String[] args) {
-        
+        Child objChild = new Child();
+        objChild.display();
+        //Parent method will be called
+        objChild.print();
     }
 }
